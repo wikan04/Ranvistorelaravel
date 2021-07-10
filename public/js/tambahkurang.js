@@ -3,14 +3,13 @@ let kurang = document.querySelectorAll('.mins');
 let hitung = document.querySelectorAll('.count');
 let hargaAwal = [];
 let hargaEl = document.querySelectorAll('.harga');
+let totalHarga = document.querySelector('#total');
 
 hargaEl.forEach((element, index) => {
     let harga = element.textContent;
     harga = harga.replace(',', '');
     hargaAwal.push(parseInt(harga));
 });
-console.log(hargaAwal);
-
 
 tambah.forEach((element, index) => {
     element.onclick = function () {
@@ -21,13 +20,30 @@ tambah.forEach((element, index) => {
         harga = harga.toString();
         let loopharga = '';
         for (let i = harga.length - 1; i >= 0; i--) {
-            //1000000
             loopharga = loopharga + harga[harga.length - i - 1];
+
             if (i % 3 == 0 && i != 0) {
                 loopharga = loopharga + ',';
             }
         }
         hargaEl.textContent = loopharga;
+        hargaEl = document.querySelectorAll('.harga');
+        nilaiAwalTotal = 0;
+        hargaEl.forEach(element => {
+            let hargaTotal = element.textContent;
+            hargaTotal = hargaTotal.replace(',', '');
+            hargaTotal = parseInt(hargaTotal);
+            nilaiAwalTotal = hargaTotal + nilaiAwalTotal;
+        });
+        let loopharga2 = '';
+        nilaiAwalTotal = nilaiAwalTotal.toString();
+        for (let i = nilaiAwalTotal.length - 1; i >= 0; i--) {
+            loopharga2 = loopharga2 + nilaiAwalTotal[nilaiAwalTotal.length - i - 1];
+            if (i % 3 == 0 && i != 0) {
+                loopharga2 = loopharga2 + ',';
+            }
+        }
+        totalHarga.textContent = "Rp." + loopharga2;
     }
 });
 
@@ -51,15 +67,29 @@ kurang.forEach((element, index) => {
             hargaEl.textContent = loopharga;
         }
 
+        nilaiAwalTotal = 0;
+        console.log(hargaEl);
+        hargaEl.forEach(element => {
+            let hargaTotal = element.textContent;
+            hargaTotal = hargaTotal.replace(',', '');
+            hargaTotal = parseInt(hargaTotal);
+            nilaiAwalTotal = hargaTotal + nilaiAwalTotal;
+
+        });
+        let loopharga2 = '';
+        nilaiAwalTotal = nilaiAwalTotal.toString();
+        for (let i = nilaiAwalTotal.length - 1; i >= 0; i--) {
+            loopharga2 = loopharga2 + nilaiAwalTotal[nilaiAwalTotal.length - i - 1];
+            if (i % 3 == 0 && i != 0) {
+                loopharga2 = loopharga2 + ',';
+            }
+        }
+        totalHarga.textContent = "Rp." + loopharga2;
     }
 });
 
 hitung.forEach((element, index) => {
     element.onchange = function () {
-        // console.log(element.value);
-        // hargaEl[index].textContent = element.value * hargaAwal[index];
-        // console.log(hargaEl[index]);
-
         let harga = hargaAwal[index] * element.value;
         harga = harga.toString();
         let loopharga = '';
@@ -70,5 +100,23 @@ hitung.forEach((element, index) => {
             }
         }
         hargaEl[index].textContent = loopharga;
+
+        nilaiAwalTotal = 0;
+        hargaEl.forEach(element => {
+            let hargaTotal = element.textContent;
+            hargaTotal = hargaTotal.replace(',', '');
+            hargaTotal = parseInt(hargaTotal);
+            nilaiAwalTotal = hargaTotal + nilaiAwalTotal;
+
+        });
+        let loopharga2 = '';
+        nilaiAwalTotal = nilaiAwalTotal.toString();
+        for (let i = nilaiAwalTotal.length - 1; i >= 0; i--) {
+            loopharga2 = loopharga2 + nilaiAwalTotal[nilaiAwalTotal.length - i - 1];
+            if (i % 3 == 0 && i != 0) {
+                loopharga2 = loopharga2 + ',';
+            }
+        }
+        totalHarga.textContent = "Rp." + loopharga2;
     }
 });

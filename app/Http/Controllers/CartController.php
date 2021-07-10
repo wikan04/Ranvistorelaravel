@@ -16,16 +16,12 @@ class CartController extends Controller
     public function index()
     {
         $carts = Cart::with(['product.galleries', 'user'])->where('users_id', Auth::user()->id)->get();
+        // $stok = Product::findOrFail();
+        // dd($carts); 
         
         return view('pages.cart',[
             'carts' => $carts
         ]);
-    }
-
-    public function qty()
-    {
-        $carts = Cart::findOrFail($id);
-        $cart->
     }
 
 
