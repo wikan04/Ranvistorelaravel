@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Cart;
+use App\Transaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -38,4 +39,26 @@ class CartController extends Controller
     {
         return view('pages.success');
     }
+
+    public function increment($id){
+        // dd($id);
+        $transaction = cart::find($id);
+
+        $transaction->update([
+            'qty'=>$transaction->qty + 1,
+            'total'=>$transaction->product->price*($transaction->qty + 1)
+        ]);
+        return redirect()->route('cart');
+    }
+    public function decrement($id){
+        // dd($id);
+        $transaction = cart::find($id);
+
+        $transaction->update([
+            'qty'=>$transaction->qty - 1,
+            'total'=>$transaction->product->price*($transaction->qty - 1)
+        ]);
+        return redirect()->route('cart');
+    }
+    
 }

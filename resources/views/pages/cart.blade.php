@@ -39,8 +39,8 @@
                   <tr>
                     <td>Gambar Barang</td>
                     <td>Nama Barang &amp; Penjual</td>
-                    <td>Harga</td>
-                    <td>Qty</td>
+                    <td>Jumlah Barang</td>
+                    <td>Harga Satuan</td>
                     <td>Menu</td>
                   </tr>
                 </thead>
@@ -61,18 +61,39 @@
                         <div class="product-title">{{ $cart->product->name }}</div>
                         <div class="product-subtitle">by {{ $cart->product->user->store_name }}</div>
                       </td>
-                      <td style="width: 35%;">
+                      <td style="width: 20%;" >
+                      <div>
+                        @if ($cart->qty>1)
+                          <form action="{{ route('dec',$cart->id) }}" method="post" enctype="multipart/form-data">
+                          @csrf
+                          <button type="submit" class="btn btn-danger btn-sm" style="width: 25%; display:inline;">-</button>
+                          </form>
+                        @endif
+                        <input type="text" name="qty" class="form-control qty" style="width: 25%; display:inline;" value="{{ $cart->qty }}"readonly>
+
+                        <form action="{{ route('in',$cart->id) }}" method="post" enctype="multipart/form-data" >
+                          @csrf
+                          <button type="submit" class="btn btn-success btn-sm" style="width: 25%;display:inline;" >+</button>
+                        </form>
+                      </div>
+                      </td>
+
+                      <td style="width: 20%;">
                         <div class="product-title" id="price">Rp. <span class="harga" >{{ number_format($cart->product->price) }}</span></div>
                         <div class="product-subtitle">Rupiah</div>
                       </td>
-                      <td style="width: 35%;">
+
+                      <td style="width: 20%;">
+                        <div class="product-title">Rp. {{ number_format($cart->sum('total')) }}</div>
+                      </td>
+                      {{-- <td style="width: 35%;">
                         <div class="input_div">
                           <input type="button" value="-" class="mins">
                           <input type="text" size="1" value="1" class="count" name="qty">
                           <input type="button" value="+" class="plus">
                         </div>
                         <div class="product-subtitle">Quantity</div>
-                      </td>
+                      </td> --}}
                       <td style="width: 20%;">
                         <form action="{{ route('cart-delete', $cart->id) }}" method="POST">
                           @method('DELETE')
@@ -222,7 +243,7 @@
 
 @push('addon-script')
     <script src="/vendor/vue/vue.js"></script>
-    <script src="/js/tambahkurang.js"></script>
+    {{-- <script src="/js/tambahkurang.js"></script> --}}
     <script src="https://unpkg.com/vue-toasted"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
