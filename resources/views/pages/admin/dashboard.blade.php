@@ -23,7 +23,7 @@
                     <div class="card mb-2">
                         <div class="card-body">
                             <div class="dashboard-card-title">
-                                Customer
+                                Pelanggan
                             </div>
                             <div class="dashboard-card-subtitle">
                                 {{ $customer }}
@@ -35,10 +35,10 @@
                     <div class="card mb-2">
                         <div class="card-body">
                             <div class="dashboard-card-title">
-                                Revenue
+                                Pendapatan
                             </div>
                             <div class="dashboard-card-subtitle">
-                                ${{ $revenue }}
+                                Rp.{{ $revenue }}
                             </div>
                         </div>
                     </div>
@@ -47,7 +47,7 @@
                     <div class="card mb-2">
                         <div class="card-body">
                             <div class="dashboard-card-title">
-                                Transaction
+                                Transaksi
                             </div>
                             <div class="dashboard-card-subtitle">
                                 {{ $transaction }}
