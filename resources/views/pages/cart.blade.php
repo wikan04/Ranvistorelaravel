@@ -41,6 +41,7 @@
                     <td>Nama Barang &amp; Penjual</td>
                     <td>Jumlah Barang</td>
                     <td>Harga Satuan</td>
+                    <td>Total Harga</td>
                     <td>Menu</td>
                   </tr>
                 </thead>
