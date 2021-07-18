@@ -224,8 +224,8 @@
                 <div class="product-subtitle"></div>
               </div>
               <div class="col-4 col-md-2">
-                <div class="product-title text-success" id="total" >Rp.{{ number_format($totalPrice ?? 0) }}</div>
-                <div class="product-subtitle">Total</div>
+                {{-- <div class="product-title text-success" id="total" >Rp.{{ number_format($cart->sum('total')) }}</div>
+                <div class="product-subtitle">Total</div> --}}
               </div>
               <div class="col-8 col-md-3">
                 <button
