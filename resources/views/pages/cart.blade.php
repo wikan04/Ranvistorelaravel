@@ -41,7 +41,7 @@
                     <td>Nama Barang &amp; Penjual</td>
                     <td>Jumlah Barang</td>
                     <td>Harga Satuan</td>
-                    <td>Total Harga</td>
+                    <td>Subtotal Harga</td>
                     <td>Menu</td>
                   </tr>
                 </thead>
@@ -87,14 +87,7 @@
                       <td style="width: 20%;">
                         <div class="product-title">Rp. {{ number_format($cart->sum('total')) }}</div>
                       </td>
-                      {{-- <td style="width: 35%;">
-                        <div class="input_div">
-                          <input type="button" value="-" class="mins">
-                          <input type="text" size="1" value="1" class="count" name="qty">
-                          <input type="button" value="+" class="plus">
-                        </div>
-                        <div class="product-subtitle">Quantity</div>
-                      </td> --}}
+        
                       <td style="width: 20%;">
                         <form action="{{ route('cart-delete', $cart->id) }}" method="POST">
                           @method('DELETE')
