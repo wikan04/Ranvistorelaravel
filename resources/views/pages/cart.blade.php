@@ -18,10 +18,10 @@
               <nav>
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item">
-                    <a href="{{ route('home') }}">Home</a>
+                    <a href="{{ route('home') }}">Beranda</a>
                   </li>
                   <li class="breadcrumb-item active">
-                    Cart
+                    Keranjang
                   </li>
                 </ol>
               </nav>
@@ -41,7 +41,7 @@
                     <td>Nama Barang &amp; Penjual</td>
                     <td>Jumlah Barang</td>
                     <td>Harga Satuan</td>
-                    <td>Total Harga</td>
+                    <td>Subtotal Harga</td>
                     <td>Menu</td>
                   </tr>
                 </thead>

@@ -37,37 +37,37 @@
               href="{{ route('product.index') }}"
               class="list-group-item list-group-item-action {{ (request()->is('admin/product')) ? 'active' : '' }} "
             >
-              Products
+              Produk
             </a>
             <a
               href="{{ route('product-gallery.index') }}"
               class="list-group-item list-group-item-action {{ (request()->is('admin/product-gallery*')) ? 'active' : '' }} "
             >
-              Galleries
+              Galeri Produk
             </a>
             <a
               href="{{ route('category.index') }}"
               class="list-group-item list-group-item-action {{ (request()->is('admin/category*')) ? 'active' : '' }} "
             >
-              Categories
+              Kategori Produk
             </a>
             <a
               href="{{ route('transaction.index') }}"
               class="list-group-item list-group-item-action"
             >
-              Transactions
+              Transaksi
             </a>
             <a
               href="{{ route('user.index') }}"
               class="list-group-item list-group-item-action {{ (request()->is('admin/user*')) ? 'active' : '' }} "
             >
-              Users
+              Info Pengguna
             </a>
             <a
-              href="/index.html"
+              href="{{ route('home') }}"
               class="list-group-item list-group-item-action"
             >
-              Sign Out
+              Keluar
             </a>
           </div>
         </div>
