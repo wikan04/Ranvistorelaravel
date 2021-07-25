@@ -86,6 +86,7 @@
 
                       <td style="width: 20%;">
                         <div class="product-title">Rp. {{ number_format($cart->total) }}</div>
+                        <div class="product-subtitle">Rupiah</div>
                       </td>
                       {{-- <td style="width: 35%;">
                         <div class="input_div">

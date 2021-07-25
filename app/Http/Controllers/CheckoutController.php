@@ -48,6 +48,8 @@ class CheckoutController extends Controller
             ]);
         }
 
+        // return dd($transaction);
+
         // Delete cart data
         Cart::with(['product','user'])
                 ->where('users_id', Auth::user()->id)
@@ -66,10 +68,10 @@ class CheckoutController extends Controller
                 'gross_amount' => (int) $request->total_price,
             ),
             'customer_details' => array(
-                'first_name'    => 'Galih Pratama',
-                'email'         => 'hanamura.iost@gmail.com'
+                'first_name'    => Auth::user()->name,
+                'email'         => Auth::user()->email,
             ),
-            'enabled_payments' => array('gopay','bank_transfer'),
+            'enabled_payments' => array('gopay','bank_transfer','bni_va','bca_va','bri_va','indomaret'),
             'vtweb' => array()
         );
 

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c80bfee49534660e08899b81b13c2e34",
+    "content-hash": "036d2a67c2e47548693180763676fdf0",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1893,19 +1893,21 @@
         },
         {
             "name": "midtrans/midtrans-php",
-            "version": "2.3.2",
+            "version": "2.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Midtrans/midtrans-php.git",
-                "reference": "94cdca1eba636b75ec3bdcf338e303068f14025c"
+                "reference": "bc26f9cea79de56a960f21314c0f2f038cf37e5c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Midtrans/midtrans-php/zipball/94cdca1eba636b75ec3bdcf338e303068f14025c",
-                "reference": "94cdca1eba636b75ec3bdcf338e303068f14025c",
+                "url": "https://api.github.com/repos/Midtrans/midtrans-php/zipball/bc26f9cea79de56a960f21314c0f2f038cf37e5c",
+                "reference": "bc26f9cea79de56a960f21314c0f2f038cf37e5c",
                 "shasum": ""
             },
             "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
                 "php": ">=5.4"
             },
             "require-dev": {
@@ -1920,7 +1922,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "GPL-3.0"
+                "MIT"
             ],
             "authors": [
                 {
@@ -1940,9 +1942,9 @@
             "homepage": "https://midtrans.com",
             "support": {
                 "issues": "https://github.com/Midtrans/midtrans-php/issues",
-                "source": "https://github.com/Midtrans/midtrans-php/tree/v2.3.2"
+                "source": "https://github.com/Midtrans/midtrans-php/tree/v2.4.2"
             },
-            "time": "2020-07-21T06:42:34+00:00"
+            "time": "2021-06-21T06:12:38+00:00"
         },
         {
             "name": "miljar/php-exif",
