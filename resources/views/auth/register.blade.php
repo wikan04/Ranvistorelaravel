@@ -14,7 +14,7 @@
                     <form class="mt-3" method="POST" action="{{ route('register') }}">
                         @csrf
                         <div class="form-group">
-                            <label>Full Name</label>
+                            <label>Nama Lengkap</label>
                             <input
                                 v-model="name"
                                 id="name"
@@ -25,6 +25,7 @@
                                 required
                                 autocomplete="name"
                                 autofocus
+                                placeholder="Masukkan Nama Lengkap Anda"
                             >
                             @error('name')
                                 <span class="invalid-feedback" role="alert">
@@ -33,7 +34,7 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label>Email Address</label>
+                            <label>Alamat Email</label>
                             <input
                                 v-model="email"
                                 @change="checkForEmailAvailability()"
@@ -45,6 +46,7 @@
                                 value="{{ old('email') }}"
                                 required
                                 autocomplete="email"
+                                placeholder="Masukkan Alamat Email Anda"
                             >
                             @error('email')
                                 <span class="invalid-feedback" role="alert">
@@ -61,6 +63,7 @@
                                 name="password"
                                 required
                                 autocomplete="new-password"
+                                placeholder="Masukkan Password Anda"
                             >
                             @error('password')
                                 <span class="invalid-feedback" role="alert">
@@ -77,6 +80,7 @@
                                 name="password_confirmation"
                                 required
                                 autocomplete="new-password"
+                                placeholder="Konfirmasi Password Anda"
                             >
                         </div>
                         <div class="form-group">
@@ -96,7 +100,7 @@
                                     :value="true"
                                 />
                                 <label for="openStoreTrue" class="custom-control-label">
-                                    Iya, boleh
+                                    Iya
                                 </label>
                             </div>
                             <div
@@ -111,7 +115,7 @@
                                     :value="false"
                                 />
                                 <label for="openStoreFalse" class="custom-control-label">
-                                    Enggak, makasih
+                                    Tidak
                                 </label>
                             </div>
                         </div>
