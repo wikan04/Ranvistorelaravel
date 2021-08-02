@@ -109,7 +109,7 @@
                         alt=""
                         class="rounded-circle mr-2 profile-picture"
                       />
-                      Hi, Admin
+                      Hi, {{ Auth::user()->name }}
                     </a>
                     <div class="dropdown-menu">
                       <a href="/" class="dropdown-item">Logout</a>
