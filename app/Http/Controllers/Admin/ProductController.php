@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 
 use App\Product;
+use App\Comment;
 use App\Category;
 use App\User;
 
@@ -74,6 +75,18 @@ class ProductController extends Controller
             'users' => $users,
             'categories' => $categories
         ]);
+    }
+
+    public function Comment()
+    {
+        Comment::create([
+            'users_id' => request()->users_id,
+            'products_id' => request()->products_id,
+            'comment' => request()->comment,
+        ]);
+
+        $product = Product::with(['galleries', 'user'])->findOrFail(request()->products_id);
+        return redirect()->route('detail',$product->slug)->with('success','Komentar Success !!');
     }
 
     /**

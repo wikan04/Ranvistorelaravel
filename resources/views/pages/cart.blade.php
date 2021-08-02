@@ -60,7 +60,7 @@
                       </td>
                       <td style="width: 35%;">
                         <div class="product-title">{{ $cart->product->name }}</div>
-                        <div class="product-subtitle">by {{ $cart->product->user->store_name }}</div>
+                        <div class="product-subtitle">by {{ $cart->product->user->name }}</div>
                       </td>
                       <td style="width: 20%;" >
                       <div>
@@ -132,7 +132,7 @@
                     class="form-control"
                     id="address_one"
                     name="address_one"
-                    value=""
+                    value="{{ $cart->user->address_one }}"
                   />
                 </div>
               </div>
@@ -144,7 +144,7 @@
                     class="form-control"
                     id="address_two"
                     name="address_two"
-                    value=""
+                    value="{{ $cart->user->address_two }}"
                   />
                 </div>
               </div>
@@ -174,7 +174,7 @@
                     class="form-control"
                     id="zip_code"
                     name="zip_code"
-                    value=""
+                    value="{{ $cart->user->zip_code }}"
                   />
                 </div>
               </div>
@@ -186,7 +186,7 @@
                     class="form-control"
                     id="country"
                     name="country"
-                    value="Indonesia"
+                    value="{{ $cart->user->country }}"
                   />
                 </div>
               </div>
@@ -198,8 +198,22 @@
                     class="form-control"
                     id="phone_number"
                     name="phone_number"
-                    value=""
+                    value="{{ $cart->user->phone_number }}"
                   />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="address_one">Pesan Untuk Penjual</label>
+                  <p><i>Masukkan Nama Character anda beserta Fraksinya</i></p>
+                  <textarea 
+                    name="pesan_penjual" 
+                    id="pesan_penjual" 
+                    cols="15" 
+                    rows="5" 
+                    class="form-control" 
+                    placeholder="Isikan pesan anda...">
+                  </textarea>
                 </div>
               </div>
             </div>

@@ -22,6 +22,9 @@
             <li class="nav-item">
                 <a href="{{ route('categories') }}" class="nav-link">Kategori</a>
             </li>
+            <li class="nav-item">
+                <a href="{{ route('about') }}" class="nav-link">Tentang</a>
+            </li>
             
             @guest
                 <li class="nav-item">

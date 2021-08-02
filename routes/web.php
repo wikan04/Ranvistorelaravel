@@ -18,11 +18,13 @@ Route::get('/debug-sentry', function () {
     throw new Exception('My first Sentry error!');
 });
 
+Route::get('/about','AboutController@index')->name('about'); 
+
 Route::get('/categories', 'CategoryController@index')->name('categories');
 Route::get('/categories/{id}', 'CategoryController@detail')->name('categories-detail');
 
 Route::get('/details/{id}', 'DetailController@index')->name('detail');
-Route::post('/details/{id}', 'DetailController@add')->name('detail-add');
+Route::POST('/details/{id}', 'DetailController@add')->name('detail-add');
 
 Route::get('/success', 'CartController@success')->name('success');
 Route::post('/checkout/callback', 'CheckoutController@callback')->name('midtrans-callback');
@@ -50,6 +52,9 @@ Route::group(['middleware' => ['auth']], function () {
         ->name('dashboard-product-store');
     Route::get('/dashboard/products/{id}', 'DashboardProductController@details')
         ->name('dashboard-product-details');
+
+    Route::POST('comentar-user','Admin\ProductController@comment')->name('commentar');
+    
     Route::post('/dashboard/products/{id}', 'DashboardProductController@update')
         ->name('dashboard-product-update');
 

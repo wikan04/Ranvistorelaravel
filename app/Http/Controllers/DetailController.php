@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Cart;
 use Illuminate\Http\Request;
 use App\Product;
-use App\Transaction;
+use App\Comment;
 use Illuminate\Support\Facades\Auth;
 
 class DetailController extends Controller
@@ -18,10 +18,10 @@ class DetailController extends Controller
     public function index(Request $request, $id)
     {
         $product = Product::with(['galleries','user'])->where('slug', $id)->firstOrFail();
+        $comment = Comment::where('products_id',$product->id)->with('user')->get();
 
-        return view('pages.detail', [
-            'product' => $product
-        ]);
+        return view('pages.detail', compact('product','comment'));
+        
     }
 
     public function add(Request $request, $id)
@@ -32,6 +32,8 @@ class DetailController extends Controller
         ];
 
         Cart::create($data);
+        
+       
 
         return redirect()->route('cart');
     }

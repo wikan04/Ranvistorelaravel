@@ -33,32 +33,32 @@
                 <div class="col-12 col-md-8">
                   <div class="row">
                     <div class="col-12 col-md-6">
-                      <div class="product-title">Customer Name</div>
+                      <div class="product-title">Nama Costumer</div>
                       <div class="product-subtitle">{{ $transaction->transaction->user->name }}</div>
                     </div>
                     <div class="col-12 col-md-6">
-                      <div class="product-title">Product Name</div>
+                      <div class="product-title">Nama Produk</div>
                       <div class="product-subtitle">
                         {{ $transaction->product->name }}
                       </div>
                     </div>
                     <div class="col-12 col-md-6">
                       <div class="product-title">
-                        Date of Transaction
+                        Tanggal Transaksi
                       </div>
                       <div class="product-subtitle">
                         {{ $transaction->created_at }}
                       </div>
                     </div>
                     <div class="col-12 col-md-6">
-                      <div class="product-title">Payment Status</div>
+                      <div class="product-title">Status Pembayaran</div>
                       <div class="product-subtitle text-danger">
                         {{ $transaction->transaction->transaction_status }}
                       </div>
                     </div>
                     <div class="col-12 col-md-6">
                       <div class="product-title">
-                        Total Amount
+                        Total Harga
                       </div>
                       <div class="product-subtitle">
                         Rp.{{ number_format($transaction->transaction->total_price) }}
@@ -66,7 +66,7 @@
                     </div>
                     <div class="col-12 col-md-6">
                       <div class="product-title">
-                        Mobile
+                        No. Handphone
                       </div>
                       <div class="product-subtitle">
                         {{ $transaction->transaction->user->phone_number }}
@@ -79,41 +79,45 @@
                 @csrf
                 <div class="row">
                   <div class="col-12 mt-4">
-                    <h5>Shipping Information</h5>
+                    <h5>Informasi Transaksi</h5>
                   </div>
                   <div class="col-12">
                     <div class="row">
                       <div class="col-12 col-md-6">
-                        <div class="product-title">Address I</div>
+                        <div class="product-title">Alamat I</div>
                         <div class="product-subtitle">
                           {{ $transaction->transaction->user->address_one }}
                         </div>
                       </div>
                       <div class="col-12 col-md-6">
-                        <div class="product-title">Address II</div>
+                        <div class="product-title">Alamat II</div>
                         <div class="product-subtitle">
                           {{ $transaction->transaction->user->address_two }}
                         </div>
                       </div>
                       <div class="col-12 col-md-6">
-                        <div class="product-title">Province</div>
+                        <div class="product-title">Provinsi</div>
                         <div class="product-subtitle">
                           {{ App\Models\Province::find($transaction->transaction->user->provinces_id)->name }}
                         </div>
                       </div>
                       <div class="col-12 col-md-6">
-                        <div class="product-title">City</div>
+                        <div class="product-title">Kota</div>
                         <div class="product-subtitle">
                           {{ App\Models\Regency::find($transaction->transaction->user->regencies_id)->name }}
                         </div>
                       </div>
                       <div class="col-12 col-md-6">
-                        <div class="product-title">Postal Code</div>
+                        <div class="product-title">Kode Pos</div>
                         <div class="product-subtitle">{{ $transaction->transaction->user->zip_code }}</div>
                       </div>
                       <div class="col-12 col-md-6">
-                        <div class="product-title">Country</div>
+                        <div class="product-title">Negara</div>
                         <div class="product-subtitle">{{ $transaction->transaction->user->country }}</div>
+                      </div>
+                      <div class="col-12 col-md-6">
+                        <div class="product-title">Pesan ke Penjual</div>
+                        <div class="product-subtitle">{{ $transaction->transaction->pesan_penjual }}</div>
                       </div>
                       <div class="col-12 col-md-3">
                         <div class="product-title">Shipping Status</div>

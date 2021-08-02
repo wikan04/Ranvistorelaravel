@@ -8,155 +8,92 @@
             <div class="row align-items-center justify-content-center row-login">
                 <div class="col-lg-4">
                     <h2>
-                        Memulai untuk jual beli <br />
-                        dengan cara terbaru
-                    </h2>
-                    <form class="mt-3" method="POST" action="{{ route('register') }}">
-                        @csrf
-                        <div class="form-group">
-                            <label>Nama Lengkap</label>
-                            <input
-                                v-model="name"
-                                id="name"
-                                type="text"
-                                class="form-control @error('name') is-invalid @enderror"
-                                name="name"
-                                value="{{ old('name') }}"
-                                required
-                                autocomplete="name"
-                                autofocus
-                                placeholder="Masukkan Nama Lengkap Anda"
-                            >
-                            @error('name')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-                        <div class="form-group">
-                            <label>Alamat Email</label>
-                            <input
-                                v-model="email"
-                                @change="checkForEmailAvailability()"
-                                id="email"
-                                type="email"
-                                class="form-control @error('email') is-invalid @enderror"
-                                :class="{ 'is-invalid': this.email_unavailable }"
-                                name="email"
-                                value="{{ old('email') }}"
-                                required
-                                autocomplete="email"
-                                placeholder="Masukkan Alamat Email Anda"
-                            >
-                            @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-                        <div class="form-group">
-                            <label>Password</label>
-                            <input
-                                id="password"
-                                type="password"
-                                class="form-control @error('password') is-invalid @enderror"
-                                name="password"
-                                required
-                                autocomplete="new-password"
-                                placeholder="Masukkan Password Anda"
-                            >
-                            @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-                        <div class="form-group">
-                            <label>Konfirmasi Password</label>
-                            <input
-                                id="password-confirm"
-                                type="password"
-                                class="form-control"
-                                name="password_confirmation"
-                                required
-                                autocomplete="new-password"
-                                placeholder="Konfirmasi Password Anda"
-                            >
-                        </div>
-                        <div class="form-group">
-                            <label>Store</label>
-                            <p class="text-muted">
-                                Apakah anda juga ingin membuka toko?
-                            </p>
-                            <div
-                            class="custom-control custom-radio custom-control-inline"
-                            >
-                                <input
-                                    type="radio"
-                                    class="custom-control-input"
-                                    name="is_store_open"
-                                    id="openStoreTrue"
-                                    v-model="is_store_open"
-                                    :value="true"
-                                />
-                                <label for="openStoreTrue" class="custom-control-label">
-                                    Iya
-                                </label>
-                            </div>
-                            <div
-                                class="custom-control custom-radio custom-control-inline"
-                            >
-                                <input
-                                    type="radio"
-                                    class="custom-control-input"
-                                    name="is_store_open"
-                                    id="openStoreFalse"
-                                    v-model="is_store_open"
-                                    :value="false"
-                                />
-                                <label for="openStoreFalse" class="custom-control-label">
-                                    Tidak
-                                </label>
-                            </div>
-                        </div>
-                        <div class="form-group" v-if="is_store_open">
-                            <label>Nama Toko</label>
-                            <input
-                                v-model="store_name"
-                                id="store_name"
-                                type="text"
-                                class="form-control @error('store_name') is-invalid @enderror"
-                                name="store_name"
-                                value="{{ old('store_name') }}"
-                                required
-                                autocomplete="store_name"
-                                autofocus
-                            >
-                            @error('name')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-                        <div class="form-group" v-if="is_store_open">
-                            <label>Kategori</label>
-                            <select name="category" class="form-control">
-                                <option value="" disabled>Select Category</option>
-                                @foreach ($categories as $category)
-                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <button
-                            type="submit"
-                            class="btn btn-success btn-block mt-4"
-                            :disabled="this.email_unavailable"
-                        >
-                            Sign Up Now
-                        </button>
-                        <a href="{{ route('login') }}" class="btn btn-signup btn-block mt-2">
-                            Back to Sign In
-                        </a>
+                      Memulai membeli dengan cara terbaru.
+                  </h2>
+                    <form action="{{ route('register') }}" method="POST" class="mt-3">
+                    @csrf
+                    <div class="form-group">
+                      <label>Nama Lengkap</label>
+                      <input 
+                      name="name"
+                      type="text"
+                      class="form-control @error('name') is-invalid @enderror" 
+                      placeholder="Masukan Nama Lengkap"
+                      v-model="name"
+                      value="{{ old('name') }}" 
+                      required 
+                      autocomplete="name" 
+                      autofocus
+                      />
+                                    @error('name')
+                                        <div class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </div>
+                                    @enderror
+                    </div>
+                    <div class="form-group">
+                      <label>Alamat Email</label>
+                      <input 
+                        type="email"
+                        name="email"
+                        @change="checkForEmailAvailability()"
+                        class="form-control  @error('email') is-invalid @enderror"
+                        :class="{ 'is-invalid' : this.email_unavailable }"
+                        placeholder="Masukan Email"
+                        v-model="email"
+                        required
+                        autocomplete="email"
+                        />
+
+                                    @error('email')
+                                        <div class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </div>
+                                    @enderror
+                      </div>
+                      <div class="form-group">
+                        <label>Password</label>
+                        <input 
+                        type="password" 
+                        name="password" 
+                        placeholder="Masukan Password" 
+                        autocomplete="new-password" 
+                        class="form-control @error('password') is-invalid @enderror"
+                        required
+                        />
+                                    @error('password')
+                                        <div class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </div>
+                                    @enderror
+                      </div>
+                      <div class="form-group">
+                      <label>Konfirmasi Password</label>
+                          <input 
+                          type="password" 
+                          id="password_confirm" 
+                          name="password_confirmation" 
+                          placeholder="Masukan Password Lagi" 
+                          autocomplete="new_password" 
+                          required 
+                          class="form-control @error('password_confirmation') is-invalid @enderror"
+                          />
+                                  @error('password_confirmation')
+                                        <div class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </div>
+                                    @enderror
+                      </div>
+                    <button 
+                      type="submit" 
+                      class="btn btn-success btn-block  mt-4"
+                      :disabled="this.email_unavailable"
+                    >
+                      Daftar Sekarang
+                    </button>
+                    <a href="{{ route('login') }}" class="btn btn-signup btn-block mt-2">
+                      Kembali ke Login
+                    </a>
                     </form>
                 </div>
             </div>
@@ -171,54 +108,54 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
       Vue.use(Toasted);
-
       var register = new Vue({
         el: "#register",
         mounted() {
           AOS.init();
-
-        },
+       
+         },
         methods: {
-            checkForEmailAvailability: function () {
-                var self = this;
-                axios.get('{{ route('api-register-check') }}', {
-                        params: {
-                            email: this.email
+          checkForEmailAvailability: function(){
+            var self = this;
+            axios.get('{{ route('api-register-check') }}', {
+                params: {
+                  email: this.email
+                }
+              })
+              .then(function (response) {
+                // Handle Success
+                if(response.data == "Available"){
+                      self.$toasted.show(
+                        "Email Anda Tersedia,Silahkan lanjutkan langkah pendaftaran.",
+                        {
+                          position: "top-center",
+                          className: "rounded",
+                          duration: 1000,
                         }
-                    })
-                    .then(function (response) {
-                        if(response.data == 'Available') {
-                            self.$toasted.show(
-                                "Email anda tersedia! Silahkan lanjut langkah selanjutnya!", {
-                                    position: "top-center",
-                                    className: "rounded",
-                                    duration: 1000,
-                                }
-                            );
-                            self.email_unavailable = false;
-                        } else {
-                            self.$toasted.error(
-                                "Maaf, tampaknya email sudah terdaftar pada sistem kami.", {
-                                    position: "top-center",
-                                    className: "rounded",
-                                    duration: 1000,
-                                }
-                            );
-                            self.email_unavailable = true;
+                      );
+                      self.email_unavailable = false ;
+                }else{
+                      self.$toasted.error(
+                        "Maaf, tampaknya email sudah terdaftar pada sistem kami.",
+                        {
+                          position: "top-center",
+                          className: "rounded",
+                          duration: 1000,
                         }
-                        // handle success
-                        console.log(response.data);
-                    })
-            }
+                      );
+                      self.email_unavailable = true;
+                }
+                console.log(response);
+              });
+              
+          }
         },
         data() {
-            return {
-                name: "",
-                email: "",
-                is_store_open: true,
-                store_name: "",
-                email_unavailable: false
-            }
+          return{
+            name: "",
+            email: "",
+            email_unavailable:false
+          }
         },
       });
     </script>

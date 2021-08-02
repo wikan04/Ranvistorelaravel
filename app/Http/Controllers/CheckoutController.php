@@ -32,6 +32,7 @@ class CheckoutController extends Controller
             'shipping_price' => 0,
             'total_price' => $request->total_price,
             'transaction_status' => 'PENDING',
+            'pesan_penjual'=>$request->pesan_penjual,
             'code' => $code
         ]);
 
