@@ -41,8 +41,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::post('/checkout', 'CheckoutController@process')->name('checkout');
 
-    Route::get('/dashboard', 'DashboardController@index')
-        ->name('dashboard');
+    Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
     Route::get('/dashboard/products', 'DashboardProductController@index')
         ->name('dashboard-product');
