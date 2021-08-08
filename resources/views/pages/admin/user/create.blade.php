@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-  Store Settings
+  Pengguna
 @endsection
 
 @section('content')
@@ -12,9 +12,9 @@
 >
   <div class="container-fluid">
     <div class="dashboard-heading">
-        <h2 class="dashboard-title">User</h2>
+        <h2 class="dashboard-title">Pengguna</h2>
         <p class="dashboard-subtitle">
-            Create New User
+            Membuat Pengguna Baru
         </p>
     </div>
     <div class="dashboard-content">
@@ -68,7 +68,7 @@
                       type="submit"
                       class="btn btn-success px-5"
                     >
-                      Save Now
+                      Simpan Sekarang
                     </button>
                   </div>
               </div>

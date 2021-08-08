@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-  Store Settings
+  Edit Transaksi
 @endsection
 
 @section('content')

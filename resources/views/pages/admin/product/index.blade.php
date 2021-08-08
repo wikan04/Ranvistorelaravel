@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Store Dashboard
+    Produk
 @endsection
 
 @section('content')
@@ -12,9 +12,9 @@
     >
     <div class="container-fluid">
         <div class="dashboard-heading">
-            <h2 class="dashboard-title">Product</h2>
+            <h2 class="dashboard-title">Produk</h2>
             <p class="dashboard-subtitle">
-                List of Product
+                Daftar Produk
             </p>
         </div>
         <div class="dashboard-content">

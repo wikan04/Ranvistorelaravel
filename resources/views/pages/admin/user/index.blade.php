@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Store Dashboard
+    Pengguna
 @endsection
 
 @section('content')
@@ -12,9 +12,9 @@
     >
     <div class="container-fluid">
         <div class="dashboard-heading">
-            <h2 class="dashboard-title">User</h2>
+            <h2 class="dashboard-title">Pengguna</h2>
             <p class="dashboard-subtitle">
-                List of User
+                Daftar Pengguna
             </p>
         </div>
         <div class="dashboard-content">
@@ -23,7 +23,7 @@
                     <div class="card">
                         <div class="card-body">
                             <a href="{{  route('user.create') }}" class="btn btn-primary mb-3">
-                                + Tambah User Baru
+                                + Tambah Pengguna Baru
                             </a>
                             <div class="table-responsive">
                                 <table class="table table-hover scroll-horizontal-vertical w-100" id="crudTable">

@@ -12,9 +12,9 @@
 >
   <div class="container-fluid">
     <div class="dashboard-heading">
-        <h2 class="dashboard-title">Category</h2>
+        <h2 class="dashboard-title">Kategori</h2>
         <p class="dashboard-subtitle">
-            Create New Category
+            Membuat Kategori baru
         </p>
     </div>
     <div class="dashboard-content">
@@ -53,7 +53,7 @@
                       type="submit"
                       class="btn btn-success px-5"
                     >
-                      Save Now
+                      Simpan Sekarang
                     </button>
                   </div>
               </div>

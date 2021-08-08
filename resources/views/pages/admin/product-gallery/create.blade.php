@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-  Store Settings
+  Galeri Produk
 @endsection
 
 @section('content')
@@ -14,7 +14,7 @@
     <div class="dashboard-heading">
         <h2 class="dashboard-title">Galeri Produk</h2>
         <p class="dashboard-subtitle">
-            Membuat Galleri Produk
+            Membuat Galeri Produk
         </p>
     </div>
     <div class="dashboard-content">

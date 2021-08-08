@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Store Dashboard
+    Galeri Produk
 @endsection
 
 @section('content')

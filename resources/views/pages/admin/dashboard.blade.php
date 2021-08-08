@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Store Dashboard
+    RanviStore Dashboard
 @endsection
 
 @section('content')
@@ -12,9 +12,9 @@
     >
     <div class="container-fluid">
         <div class="dashboard-heading">
-            <h2 class="dashboard-title">Admin Dashboard</h2>
+            <h2 class="dashboard-title">Dashboard Admin</h2>
             <p class="dashboard-subtitle">
-                This is Ranvistore Admin Panel
+                Ini adalah admin panel untuk RanviStore
             </p>
         </div>
         <div class="dashboard-content">
