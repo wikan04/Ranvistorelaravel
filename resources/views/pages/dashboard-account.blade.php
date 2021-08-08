@@ -1,7 +1,7 @@
 @extends('layouts.dashboard')
 
 @section('title')
-  Account Settings
+  Pengaturan Akun
 @endsection
 
 @section('content')
@@ -12,7 +12,7 @@
 >
   <div class="container-fluid">
     <div class="dashboard-heading">
-      <h2 class="dashboard-title">Akun Saya</h2>
+      <h2 class="dashboard-title">Pengaturan Akun</h2>
       <p class="dashboard-subtitle">
         Perbarui profil Anda saat ini
       </p>

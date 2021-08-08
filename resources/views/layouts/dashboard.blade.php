@@ -43,7 +43,7 @@
               href="{{ route('dashboard-settings-account') }}"
               class="list-group-item list-group-item-action {{ (request()->is('dashboard/account*')) ? 'active' : '' }} "
             >
-              Akun Saya
+              Pengaturan Akun
             </a>
             <a
               href="{{ route('home') }}"
