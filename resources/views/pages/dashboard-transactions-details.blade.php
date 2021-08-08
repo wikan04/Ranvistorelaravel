@@ -66,6 +66,14 @@
                     </div>
                     <div class="col-12 col-md-6">
                       <div class="product-title">
+                        Banyaknya Barang
+                      </div>
+                      <div class="product-subtitle">
+                      {{ $transaction->qty }}
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                      <div class="product-title">
                         No. Handphone
                       </div>
                       <div class="product-subtitle">
