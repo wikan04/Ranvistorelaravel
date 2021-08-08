@@ -1,7 +1,7 @@
 @extends('layouts.success')
 
 @section('title')
-    Store Success Page
+    Halaman Transaksi
 @endsection
 
 @section('content')

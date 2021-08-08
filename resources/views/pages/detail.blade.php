@@ -85,7 +85,7 @@
                         type="submit"
                         class="btn btn-success px-4 text-white btn-block mb-3"
                       >
-                        Add to Cart
+                        Masukkan ke Keranjang
                       </button>
                     </form>
                 @else
@@ -93,7 +93,7 @@
                       href="{{ route('login') }}"
                       class="btn btn-success px-4 text-white btn-block mb-3"
                     >
-                      Sign in to Add
+                      Login untuk Belanja
                     </a>
                 @endauth
               </div>

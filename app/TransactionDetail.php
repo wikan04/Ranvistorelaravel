@@ -12,6 +12,7 @@ class TransactionDetail extends Model
         'price',
         'shipping_status',
         'resi',
+        'qty',
         'code'
     ];
 
