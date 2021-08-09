@@ -168,7 +168,7 @@
                       type="submit"
                       class="btn btn-success btn-lg mt-4"
                     >
-                      Save Now
+                      Simpan Sekarang
                     </button>
                   </div>
                 </div>
