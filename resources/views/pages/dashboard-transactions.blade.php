@@ -74,7 +74,7 @@
                           {{ $transaction->product->name }}
                         </div>
                         <div class="col-md-3">
-                          {{ $transaction->product->user->store_name }}
+                          {{ $transaction->product->user->name }}
                         </div>
                         <div class="col-md-3">
                           {{ $transaction->created_at }}
@@ -113,7 +113,7 @@
                           {{ $transaction->product->name }}
                         </div>
                         <div class="col-md-3">
-                          {{ $transaction->product->user->store_name }}
+                          {{ $transaction->product->user->name }}
                         </div>
                         <div class="col-md-3">
                           {{ $transaction->created_at }}
